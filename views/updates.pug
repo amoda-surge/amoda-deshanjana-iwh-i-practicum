@@ -1,0 +1,33 @@
+doctype html
+html 
+    head 
+        title= `${title}`
+        meta(name="viewport" content="width=device-width, initial-scale=1")
+        link(rel="stylesheet", href="/css/style.css")
+    body    
+        h1 Add/Edit Monster
+        a(href="/") Return to the homepage
+        .form-container
+            form(method="POST" action="/update-cobj")
+                div
+                    label(for="monster_id") Monster ID (Unique)
+                    input(type="text" name="monster_id" required)
+                div
+                    label(for="monster_name") Monster Name
+                    input(type="text" name="monster_name" required)
+                div
+                    label(for="classification") Classification
+                    input(type="text" name="classification" required)
+                div
+                    label Gender
+                    input(type="radio" id="male" name="gender" value="Male" required)
+                    label(for="male") Male
+                    input(type="radio" id="female" name="gender" value="Female")
+                    label(for="female") Female
+                div
+                    label(for="striking_strength") Striking Strength
+                    select(name="striking_strength" required)
+                        each val in [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
+                            option(value=val)= val
+                div
+                    button(type="submit") Submit

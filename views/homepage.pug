@@ -1,0 +1,25 @@
+doctype html
+html 
+    head 
+        title= `${title}`
+        meta(name="viewport" content="width=device-width, initial-scale=1")
+        link(rel="stylesheet", href="/css/style.css")
+    body    
+        h1 Custom Object: Monsters
+        a(href="/update-cobj") Add/Edit to this table
+        table
+            thead
+                tr
+                    th Monster ID
+                    th Monster Name
+                    th Classification
+                    th Gender
+                    th Striking Strength
+            tbody
+                each monster in data
+                    tr
+                        td #{monster.properties.monster_id}
+                        td #{monster.properties.monster_name}
+                        td #{monster.properties.classification}
+                        td #{monster.properties.gender}
+                        td #{monster.properties.striking_strength}
